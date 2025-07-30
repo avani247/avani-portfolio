@@ -105,6 +105,18 @@
         </style>
   </head>
   <body class="font-body bg-neutral-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <!-- Navigation header -->
+    <header class="fixed top-0 left-0 w-full z-20 bg-transparent">
+      <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-serif font-bold text-[#5b2333]">Avani</div>
+        <ul class="flex space-x-6 text-[#5b2333] font-medium">
+          <li><a href="#design" class="hover:underline">Design</a></li>
+          <li><a href="#product" class="hover:underline">Product</a></li>
+          <li><a href="#blogs" class="hover:underline">Blogs</a></li>
+          <li><a href="#about" class="hover:underline">About</a></li>
+        </ul>
+      </nav>
+    </header>
     <!-- Dark mode toggle -->
     <button
       id="theme-toggle"
@@ -130,7 +142,7 @@
     <!-- Hero Section -->
     <section
       id="hero"
-      class="relative overflow-hidden py-32"
+      class="relative overflow-hidden py-32 pt-40" <!-- extra padding top to account for fixed nav -->
       style="background: linear-gradient(90deg, #FFF200 0%, #A6D7D6 25%, #D9CFE3 50%, #F4C6BC 75%, #F89E59 100%);"
     >
       <div class="relative z-10 max-w-5xl mx-auto px-6 text-center animate__animated animate__fadeIn">
@@ -150,6 +162,26 @@
           class="inline-block bg-[#5b2333] hover:bg-[#4d1c29] text-white py-3 px-8 rounded-md font-medium shadow-md transition-transform transform hover:-translate-y-1"
           >Know More</a
         >
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section id="intro" class="relative py-20 bg-white dark:bg-gray-900 overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 animate__animated animate__fadeInUp">
+        <div class="md:w-1/2">
+          <img src="avani1.jpg" alt="Avani smiling" class="rounded-lg shadow-lg w-full h-auto" />
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#5b2333] mb-4">Building for consumers</h2>
+          <p class="mb-6 leading-relaxed text-gray-700 dark:text-gray-300">
+            Looking for a one-person powerhouse to scale your startup? I'm your go-to for everything—brand strategy, pitch decks, app interfaces, you name it, we'll do it, with success.
+          </p>
+          <a
+            href="#about"
+            class="inline-block bg-[#5b2333] hover:bg-[#4d1c29] text-white py-3 px-8 rounded-md font-medium shadow-md transition-transform transform hover:-translate-y-1"
+            >Know more about me</a
+          >
+        </div>
       </div>
     </section>
 
@@ -259,7 +291,7 @@
       <div class="section-shape section-shape-accent" style="width: 180px; height: 180px; bottom: -3rem; right: -5rem;"></div>
       <div class="max-w-5xl mx-auto px-4 animate__animated animate__fadeInUp">
         <h2 class="text-3xl font-sans font-bold text-primary mb-8">Design Work</h2>
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid gap-6 md:grid-cols-3">
           <!-- Design Card 1: Brandbook -->
           <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow group">
             <img src="assets/design/brandbook.jpg" alt="Brandbook cover" class="h-40 w-full object-cover" />
@@ -304,32 +336,35 @@
             <div class="h-40 bg-gradient-to-r from-primary to-accent"></div>
             <div class="p-4">
               <h3 class="font-semibold text-lg mb-2">Customer Loyalty Platform</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-300">
-                Designed and launched a platform that rewards loyal customers through gamification and personalised offers.
+              <p class="text-sm mb-3">
+                Designed a loyalty rewards platform that increased customer retention by 15%. Led
+                cross‑functional team from concept to launch.
               </p>
-              <a href="#" class="text-accent mt-2 inline-block hover:underline">View project</a>
+              <a href="#" class="text-primary font-medium hover:underline">Read More →</a>
             </div>
           </div>
           <!-- Project Card 2 -->
           <div class="bg-white dark:bg-gray-900 rounded-lg shadow overflow-hidden">
             <div class="h-40 bg-gradient-to-r from-primary to-accent"></div>
             <div class="p-4">
-              <h3 class="font-semibold text-lg mb-2">AI‑Powered Helpdesk</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-300">
-                Built a chatbot that leverages NLP to automate customer support, reducing response times by 40%.
+              <h3 class="font-semibold text-lg mb-2">Voice‑Powered Support Bot</h3>
+              <p class="text-sm mb-3">
+                Built an NLP‑powered chatbot that reduced support call volume by 30%, improving
+                customer satisfaction.
               </p>
-              <a href="#" class="text-accent mt-2 inline-block hover:underline">View project</a>
+              <a href="#" class="text-primary font-medium hover:underline">Read More →</a>
             </div>
           </div>
           <!-- Project Card 3 -->
           <div class="bg-white dark:bg-gray-900 rounded-lg shadow overflow-hidden">
             <div class="h-40 bg-gradient-to-r from-primary to-accent"></div>
             <div class="p-4">
-              <h3 class="font-semibold text-lg mb-2">Mobile App Revamp</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-300">
-                Led the redesign of a mobile shopping app, focusing on improved navigation and personalised recommendations.
+              <h3 class="font-semibold text-lg mb-2">E‑commerce Redesign</h3>
+              <p class="text-sm mb-3">
+                Led a comprehensive redesign of an e‑commerce app, optimising navigation and
+                checkout flows to boost conversion rates.
               </p>
-              <a href="#" class="text-accent mt-2 inline-block hover:underline">View project</a>
+              <a href="#" class="text-primary font-medium hover:underline">Read More →</a>
             </div>
           </div>
         </div>
@@ -337,77 +372,89 @@
     </section>
 
     <!-- Blogs Section -->
-    <section id="blogs" class="relative py-20 bg-white dark:bg-gray-900 overflow-hidden">
-      <!-- shapes for posts -->
-      <div class="section-shape section-shape-primary" style="width: 240px; height: 240px; top: -4rem; left: -5rem;"></div>
-      <div class="section-shape section-shape-accent" style="width: 180px; height: 180px; bottom: -2rem; right: -4rem;"></div>
+    <section id="blogs" class="relative py-20 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+      <!-- background shapes for posts -->
+      <div class="section-shape section-shape-primary" style="width: 220px; height: 220px; top: -3rem; left: -5rem;"></div>
+      <div class="section-shape section-shape-accent" style="width: 180px; height: 180px; bottom: -3rem; right: -5rem;"></div>
       <div class="max-w-5xl mx-auto px-4 animate__animated animate__fadeInUp">
         <h2 class="text-3xl font-sans font-bold text-primary mb-8">Blogs</h2>
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid gap-6 md:grid-cols-3">
           <!-- Post 1 -->
-          <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition-transform transform hover:-translate-y-1">
-            <h3 class="font-semibold text-lg mb-2">N8N Agent & Automation: Instagram Scraper</h3>
-            <p class="text-sm mb-2">Exploring agent automation using n8n to scrape Instagram for insights and content discovery.</p>
-            <a
-              href="https://www.linkedin.com/posts/avanishitole_n8n-agentautomation-instagramscraper-activity-7351174528548397056-TS6b"
-              target="_blank"
-              class="text-accent hover:underline"
-              >Read more</a
-            >
-          </div>
+          <a
+            href="https://www.linkedin.com/posts/avanishitole_n8n-agentautomation-instagramscraper-activity-7351174528548397056-TS6b"
+            target="_blank"
+            class="block bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-md transition-transform transform hover:-translate-y-1"
+          >
+            <h3 class="text-lg font-semibold mb-2">
+              Automating Instagram scraping with n8n
+            </h3>
+            <p class="text-sm text-gray-700 dark:text-gray-400 mb-4">
+              A hands‑on guide to building an n8n agent that scrapes Instagram data using
+              no‑code automation tools.
+            </p>
+            <span class="text-primary font-semibold">Read on LinkedIn →</span>
+          </a>
           <!-- Post 2 -->
-          <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition-transform transform hover:-translate-y-1">
-            <h3 class="font-semibold text-lg mb-2">Midjourney vs Kling vs Sora: Prompting</h3>
-            <p class="text-sm mb-2">A comparative analysis of AI art models and how prompt engineering shapes creative outcomes.</p>
-            <a
-              href="https://www.linkedin.com/posts/avanishitole_midjourney-vs-kling-vs-sora-prompting-activity-7345361021181509632-Nyjb"
-              target="_blank"
-              class="text-accent hover:underline"
-              >Read more</a
-            >
-          </div>
+          <a
+            href="https://www.linkedin.com/posts/avanishitole_midjourney-vs-kling-vs-sora-prompting-activity-7345361021181509632-Nyjb"
+            target="_blank"
+            class="block bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-md transition-transform transform hover:-translate-y-1"
+          >
+            <h3 class="text-lg font-semibold mb-2">
+              Midjourney vs Kling vs Sora
+            </h3>
+            <p class="text-sm text-gray-700 dark:text-gray-400 mb-4">
+              Exploring how different AI art models respond to prompt variations and which
+              techniques yield the most stunning visuals.
+            </p>
+            <span class="text-primary font-semibold">Read on LinkedIn →</span>
+          </a>
           <!-- Post 3 -->
-          <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition-transform transform hover:-translate-y-1">
-            <h3 class="font-semibold text-lg mb-2">AI Animation with No-Code Tools</h3>
-            <p class="text-sm mb-2">Creating engaging animations using AI‑powered no‑code tools for story-telling and marketing.</p>
-            <a
-              href="https://www.linkedin.com/posts/avanishitole_ai-animation-nocode-activity-7341714658405359617-5ib4"
-              target="_blank"
-              class="text-accent hover:underline"
-              >Read more</a
-            >
-          </div>
+          <a
+            href="https://www.linkedin.com/posts/avanishitole_ai-animation-nocode-activity-7341714658405359617-5ib4"
+            target="_blank"
+            class="block bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-md transition-transform transform hover:-translate-y-1"
+          >
+            <h3 class="text-lg font-semibold mb-2">
+              AI Animation without Code
+            </h3>
+            <p class="text-sm text-gray-700 dark:text-gray-400 mb-4">
+              Discover AI‑driven tools that empower creators to generate animations
+              effortlessly without writing a single line of code.
+            </p>
+            <span class="text-primary font-semibold">Read on LinkedIn →</span>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="relative py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden">
+    <section id="testimonials" class="relative py-20 bg-accent/5 dark:bg-gray-800 overflow-hidden">
       <!-- shapes for testimonials -->
-      <div class="section-shape section-shape-primary" style="width: 250px; height: 250px; top: -4rem; right: -5rem;"></div>
-      <div class="section-shape section-shape-accent" style="width: 200px; height: 200px; bottom: -3rem; left: -4rem;"></div>
-      <div class="max-w-5xl mx-auto px-4 animate__animated animate__fadeInUp">
-        <h2 class="text-3xl font-sans font-bold text-primary mb-8 text-center">Testimonials</h2>
-        <div class="testimonial-container relative h-48">
-          <div id="testimonial-track" class="testimonial-track">
-            <div class="testimonial px-4">
-              <p class="italic text-lg mb-2">
-                “Avani is a visionary product leader who always puts the customer first. Her strategic
-                thinking and empathy make her a joy to work with.”
+      <div class="section-shape section-shape-accent" style="width: 240px; height: 240px; top: -3rem; right: -5rem;"></div>
+      <div class="section-shape section-shape-primary" style="width: 200px; height: 200px; bottom: -3rem; left: -5rem;"></div>
+      <div class="max-w-4xl mx-auto px-4 text-center animate__animated animate__fadeInUp">
+        <h2 class="text-3xl font-sans font-bold text-primary mb-6">Testimonials</h2>
+        <div class="testimonial-container" id="testimonial-container">
+          <div class="testimonial-track" id="testimonial-track">
+            <div class="testimonial px-6">
+              <p class="italic mb-3">
+                “Avani’s strategic thinking and empathetic leadership elevated our product to the next
+                level. She’s a true asset to any team.”
               </p>
-              <span class="font-semibold">— Rohit S., Software Engineer</span>
+              <span class="font-semibold">— Rahul K., Engineering Lead</span>
             </div>
-            <div class="testimonial px-4">
-              <p class="italic text-lg mb-2">
-                “Working with Avani was a masterclass in collaboration. She balances user research with
-                business goals to deliver products that delight.”
+            <div class="testimonial px-6">
+              <p class="italic mb-3">
+                “Working with Avani was a game‑changer. Her data‑driven approach and creative
+                solutions helped us hit ambitious growth targets.”
               </p>
-              <span class="font-semibold">— Pooja M., Product Designer</span>
+              <span class="font-semibold">— Priya S., Marketing Manager</span>
             </div>
-            <div class="testimonial px-4">
-              <p class="italic text-lg mb-2">
-                “Avani’s leadership transformed our product roadmap. Her drive and clarity inspired
-                everyone on the team.”
+            <div class="testimonial px-6">
+              <p class="italic mb-3">
+                “Avani brings passion and precision to everything she does. She communicates
+                complex ideas clearly and inspires those around her.”
               </p>
               <span class="font-semibold">— Karan D., UX Designer</span>
             </div>
@@ -489,7 +536,7 @@
         track.style.transform = `translateX(-${index * 100}%)`;
       }, 5000);
 
-      // Set current year in footer
+      // Current year in footer
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </body>
