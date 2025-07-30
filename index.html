@@ -24,7 +24,7 @@
     <!-- Tailwind via CDN with custom colors -->
     <script>
       tailwind.config = {
-        
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
@@ -104,38 +104,36 @@
           }
         </style>
   </head>
-  <body class="font-body bg-white text-black">
+  <body class="font-body bg-neutral-100 dark:bg-gray-900 text-black dark:text-gray-100">
     <!-- Navigation header -->
     <!-- Apply a translucent background and backdrop blur to prevent overlap -->
     <header class="fixed top-0 left-0 w-full z-20 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md">
-      <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between relative">
         <div class="text-xl font-serif font-bold text-[#5b2333]">AVANI</div>
-        <ul class="flex space-x-6 text-[#5b2333] font-medium">
-          <li><a href="#design" class="hover:underline">Design</a></li>
-          <li><a href="#product" class="hover:underline">Product & Experience</a></li>
-          <li><a href="#blogs" class="hover:underline">AI experiments</a></li>
-          <li><a href="#about" class="hover:underline">About me</a></li>
+        <!-- Mobile menu button -->
+        <button
+          id="nav-toggle"
+          class="md:hidden text-[#5b2333] focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <!-- Navigation links -->
+        <ul
+          id="nav-menu"
+          class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 text-[#5b2333] font-medium absolute md:static top-full left-0 w-full md:w-auto bg-white/90 dark:bg-gray-900/90 backdrop-blur md:backdrop-blur-0 p-6 md:p-0 shadow-lg md:shadow-none"
+        >
+          <li><a href="#design" class="block md:inline hover:underline">Design</a></li>
+          <li><a href="#product" class="block md:inline hover:underline">Product & Experience</a></li>
+          <li><a href="#blogs" class="block md:inline hover:underline">AI experiments</a></li>
+          <li><a href="#about" class="block md:inline hover:underline">About me</a></li>
         </ul>
       </nav>
     </header>
 
-  
-      <svg
-        id="theme-icon"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="w-6 h-6"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M12 3v1m0 16v1m8.66-9H20m-16 0H3m15.364 6.364l-.707-.707M5.343 5.343l-.707-.707m12.728 0l-.707.707M5.343 18.657l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z"
-        />
-      </svg>
-    </button>
+    <!-- Dark mode toggle removed -->
     <!-- Hero Section -->
     <section
       id="hero"
@@ -194,7 +192,7 @@
     <!-- About section removed. It will be inserted below the testimonials section -->
 
     <!-- Product & Experience Section -->
-    <section id="product" class="relative py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden">
+    <section id="product" class="relative py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden scroll-mt-28">
       <!-- subtle background shapes -->
       <div class="section-shape section-shape-accent" style="width: 250px; height: 250px; top: -3rem; right: -5rem;"></div>
       <div class="section-shape section-shape-primary" style="width: 180px; height: 180px; bottom: -3rem; left: -4rem;"></div>
@@ -242,7 +240,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="relative py-20 bg-gradient-to-r from-gray-50 via-white to-gray-50 dark:bg-gray-900 overflow-hidden">
+    <section id="skills" class="relative py-20 bg-gradient-to-r from-gray-50 via-white to-gray-50 dark:bg-gray-900 overflow-hidden scroll-mt-28">
       <!-- floating shapes for skills -->
       <div class="section-shape section-shape-primary" style="width: 220px; height: 220px; top: -3rem; left: -5rem;"></div>
       <div class="section-shape section-shape-accent" style="width: 160px; height: 160px; bottom: -2rem; right: -4rem;"></div>
@@ -260,7 +258,7 @@
     </section>
 
     <!-- Design Section -->
-    <section id="design" class="relative py-20 bg-accent/5 dark:bg-gray-800 overflow-hidden">
+    <section id="design" class="relative py-20 bg-accent/5 dark:bg-gray-800 overflow-hidden scroll-mt-28">
       <!-- background shapes for design -->
       <div class="section-shape section-shape-primary" style="width: 220px; height: 220px; top: -3rem; left: -5rem;"></div>
       <div class="section-shape section-shape-accent" style="width: 180px; height: 180px; bottom: -3rem; right: -5rem;"></div>
@@ -311,7 +309,7 @@
 
 
     <!-- Blogs Section -->
-    <section id="blogs" class="relative py-20 bg-white dark:bg-gray-900 overflow-hidden">
+    <section id="blogs" class="relative py-20 bg-white dark:bg-gray-900 overflow-hidden scroll-mt-28">
       <!-- shapes for posts -->
       <div class="section-shape section-shape-primary" style="width: 240px; height: 240px; top: -4rem; left: -5rem;"></div>
       <div class="section-shape section-shape-accent" style="width: 180px; height: 180px; bottom: -2rem; right: -4rem;"></div>
@@ -356,7 +354,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="relative py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden">
+    <section id="testimonials" class="relative py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden scroll-mt-28">
       <!-- shapes for testimonials -->
       <div class="section-shape section-shape-primary" style="width: 250px; height: 250px; top: -4rem; right: -5rem;"></div>
       <div class="section-shape section-shape-accent" style="width: 200px; height: 200px; bottom: -3rem; left: -4rem;"></div>
@@ -391,7 +389,7 @@
     </section>
 
     <!-- About Section (moved below testimonials) -->
-    <section id="about" class="relative py-20 bg-white dark:bg-gray-900 overflow-hidden">
+    <section id="about" class="relative py-20 bg-white dark:bg-gray-900 overflow-hidden scroll-mt-28">
       <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 animate__animated animate__fadeInUp">
         <!-- Left column: about text -->
         <div class="md:w-1/2 order-2 md:order-1">
@@ -423,7 +421,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="relative py-20 bg-gradient-to-br from-white via-gray-50 to-accent/10 dark:bg-gray-800 overflow-hidden">
+    <section id="contact" class="relative py-20 bg-gradient-to-br from-white via-gray-50 to-accent/10 dark:bg-gray-800 overflow-hidden scroll-mt-28">
       <!-- shapes for contact -->
       <div class="section-shape section-shape-primary" style="width: 220px; height: 220px; top: -3rem; left: -5rem;"></div>
       <div class="section-shape section-shape-accent" style="width: 180px; height: 180px; bottom: -3rem; right: -5rem;"></div>
@@ -477,11 +475,6 @@
     </footer>
 
     <script>
-      // Dark mode toggle
-      const toggleButton = document.getElementById('theme-toggle');
-      toggleButton.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark');
-      });
 
       // Testimonials slider
       const track = document.getElementById('testimonial-track');
@@ -493,6 +486,15 @@
 
       // Set current year in footer
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mobile navigation toggle
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('hidden');
+        });
+      }
 
       // Send email via mailto with basic validation
       function sendEmail(event) {
