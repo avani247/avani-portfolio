@@ -111,10 +111,10 @@
       <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <div class="text-xl font-serif font-bold text-[#5b2333]">AVANI</div>
         <ul class="flex space-x-6 text-[#5b2333] font-medium">
-          <li><a href="#design" class="hover:underline">Design</a></li>
-          <li><a href="#product" class="hover:underline">Product</a></li>
-          <li><a href="#blogs" class="hover:underline">Blogs</a></li>
-          <li><a href="#about" class="hover:underline">About</a></li>
+          <li><a href="#design" class="hover:underline">🎨 Design</a></li>
+          <li><a href="#product" class="hover:underline">🖥️ Product & Experience</a></li>
+          <li><a href="#blogs" class="hover:underline">🤖 AI experiments</a></li>
+          <li><a href="#about" class="hover:underline">👋🏻 About me</a></li>
         </ul>
       </nav>
     </header>
@@ -145,14 +145,22 @@
     <section
       id="hero"
       class="relative overflow-hidden py-32 pt-40"
-      style="background: linear-gradient(90deg, #FFF200 0%, #A6D7D6 25%, #D9CFE3 50%, #F4C6BC 75%, #F89E59 100%);"
+      style="background: linear-gradient(45deg,
+        #FFF200 0%,
+        #A6D7D6 25%,
+        #D9CFE3 50%,
+        #F4C6BC 75%,
+        #F89E59 100%
+      );"
     >
       <div class="relative z-10 max-w-5xl mx-auto px-6 text-center animate__animated animate__fadeIn">
-        <p class="uppercase tracking-wide text-orange-600 mb-4 font-medium">you're watching</p>
-        <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 text-[#5b2333]">
+        <p class="uppercase tracking-wide text-orange-600 mb-4 font-medium" style="font-family: 'Avenir', 'Montserrat', sans-serif; font-weight: 300;">
+          you're watching
+        </p>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 text-[#5b2333]" style="font-family: 'Futura', 'Jost', sans-serif; font-weight: 700;">
           Avani Shitole
         </h1>
-        <p class="text-lg md:text-2xl mb-10 max-w-3xl mx-auto text-[#5b2333]">
+        <p class="text-lg md:text-2xl mb-10 max-w-3xl mx-auto text-[#5b2333]" style="font-family: 'Avenir', 'Montserrat', sans-serif;">
           I love to talk about <span class="font-semibold">AI</span>,
           <span class="font-semibold">Product</span>,
           <span class="font-semibold">Design</span>,
@@ -430,25 +438,21 @@
       <div class="section-shape section-shape-primary" style="width: 220px; height: 220px; top: -3rem; left: -5rem;"></div>
       <div class="section-shape section-shape-accent" style="width: 180px; height: 180px; bottom: -3rem; right: -5rem;"></div>
       <div class="max-w-3xl mx-auto px-4 text-center animate__animated animate__fadeInUp">
-        <h2 class="text-3xl font-sans font-bold text-primary mb-6">Contact</h2>
-        <p class="mb-6">I'd love to hear from you! Feel free to reach out with any opportunities or just to say hello.</p>
-        <form
-          class="space-y-4"
-          action="https://formspree.io/f/xyyvdjng"
-          method="POST"
-        >
+        <h2 class="text-3xl font-sans font-bold text-primary mb-6">📞 Contact</h2>
+        <p class="mb-6">I'm always looking for new and exciting opportunities. Let's catch up over a cup of coffee. ☕️</p>
+        <form class="space-y-4" onsubmit="sendEmail(event)">
           <div class="flex flex-col md:flex-row md:space-x-4">
             <input
               type="text"
               name="name"
-              placeholder="Your Name"
+              placeholder="Your Name"
               required
               class="flex-1 px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-700 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <input
               type="email"
               name="email"
-              placeholder="Your Email"
+              placeholder="Your Email"
               required
               class="flex-1 mt-4 md:mt-0 px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-700 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
             />
@@ -456,15 +460,15 @@
           <textarea
             name="message"
             rows="4"
-            placeholder="Your Message"
+            placeholder="Your Message"
             required
             class="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-700 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
           ></textarea>
           <button
             type="submit"
-            class="bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-8 rounded transition"
+            class="inline-block bg-[#5b2333] hover:bg-[#4d1c29] text-white py-3 px-8 rounded-md font-medium shadow-md transition-transform transform hover:-translate-y-1"
           >
-            Send Message
+            Send Message
           </button>
         </form>
       </div>
@@ -499,6 +503,27 @@
 
       // Set current year in footer
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Send email via mailto with basic validation
+      function sendEmail(event) {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!name || !email || !message) {
+          alert('Please fill out all fields.');
+          return;
+        }
+        if (!emailRegex.test(email)) {
+          alert('Please enter a valid email address.');
+          return;
+        }
+        const subject = encodeURIComponent('Portfolio Inquiry from ' + name);
+        const body = encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')');
+        window.location.href = `mailto:avantikashitole@gmail.com?subject=${subject}&body=${body}`;
+      }
     </script>
   </body>
 </html>
